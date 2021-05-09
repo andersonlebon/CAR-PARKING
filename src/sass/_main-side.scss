@@ -1,0 +1,152 @@
+.side {
+  flex: 1;
+  padding: 40px;
+  transition: all 0.6s ease-in;
+  overflow-y: auto;
+  height: 86vh;
+  .main-side {
+    width: 100%;
+    // height: 100%;
+    .side-content {
+      margin-bottom: 10px;
+      @include aligning(center, row);
+      h1 {
+        margin: 0 auto 0 0;
+        font-size: 27px;
+        font-weight: 500;
+      }
+      .buttons {
+        @include aligning(center, row);
+
+        .add {
+          color: #fff;
+          padding: 8px 38px;
+          font-weight: 700;
+          border-radius: 50px;
+          border: none;
+          font-size: 13px;
+          margin-right: 5px;
+          background-color: $button-background;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        .select {
+          z-index: 0;
+          background-color: $button-background;
+          padding: 0;
+          border-radius: 50px;
+          @include aligning(space-between, row);
+          .selected {
+            padding: 5px 15px;
+            @include aligning(center, column);
+          }
+          .do {
+            color: #fff;
+            border-radius: 0 50px 50px 0;
+            background: transparent;
+            border: none;
+            // background-color: brown;
+            padding: 5px 15px;
+            @include aligning(center, column);
+            &:hover {
+              background-color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+  .navLink {
+    width: 100%;
+    z-index: 3;
+    @include aligning(flex-start, row);
+    height: 60px;
+    @include border(bottom);
+    ul {
+      list-style: none;
+      @include aligning(flex-start, row);
+      margin: 0;
+      padding: 0;
+      li {
+        padding-right: 10px;
+        .bigIcon {
+          font-size: 26px;
+        }
+        a {
+          color: $smarl-text-color;
+          font-size: 19px;
+          font-weight: inherit;
+        }
+      }
+    }
+  }
+}
+.bg {
+  border: 1px solid rgba(0, 0, 0, 0.527);
+  height: 27px !important;
+  width: 180px !important;
+  margin: 0 !important;
+}
+.div {
+  border-radius: 17px;
+  position: relative;
+  width: auto !important;
+  @include aligning(center, row);
+  padding: 0 10px;
+  margin: 0;
+  p {
+    color: $smarl-text-color;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+  }
+  &:hover {
+    background-color: $button-background;
+    cursor: pointer !important;
+    transition: all 0.3s ease;
+    p {
+      color: #fff !important;
+    }
+  }
+}
+.drop {
+  width: 120%;
+  transition: all 0.1s ease-in-out;
+  background-color: $secondry-background;
+  border-radius: 10px;
+  position: absolute;
+  top: 120% !important;
+  border: 1px solid $border-color;
+  ul {
+    text-align: start;
+    padding: 10px 0px !important;
+    width: 100% !important;
+    li {
+      padding: 5px 15px !important;
+      width: 100% !important;
+
+      &:hover {
+        background: $button-background;
+        transition: all 0.5s ease;
+        cursor: pointer !important;
+        a {
+          color: #fff !important;
+        }
+      }
+      a {
+        color: $smarl-text-color;
+        font-size: 13px !important;
+        font-weight: inherit;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.not-drop {
+  position: absolute;
+  visibility: hidden;
+  top: 50%;
+}

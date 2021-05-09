@@ -1,0 +1,95 @@
+@mixin aligning($positon, $direction) {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: $direction;
+  justify-content: $positon;
+  align-items: center;
+}
+.header {
+  font-family: Nunito;
+  box-shadow: 0 1px 5px rgb(207, 206, 206);
+  background-color: $secondry-background;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  height: 100px;
+  width: 100%;
+  @include aligning(space-between, row);
+  padding: 0 2rem;
+  div {
+    @include aligning(center, row);
+    span {
+      color: $smarl-text-color;
+    }
+  }
+
+  .sideTwo {
+    margin-right: 2rem;
+    padding: 20px;
+    span {
+      padding: 0 15px;
+      font-size: 17px;
+    }
+    .logged {
+      .picture {
+        background-color: $background-color;
+        color: $smarl-text-color;
+        border-radius: 50%;
+        font-size: 30px !important;
+      }
+      span:hover {
+        transform: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.sideOne {
+  margin: 0;
+  padding: 0 1.2em;
+  .list {
+    span {
+      font-size: 25px;
+    }
+  }
+}
+.language {
+  width: 50px;
+  margin-left: 10px;
+  border-radius: 17px;
+  background: $background-color;
+  padding: 0 1.2em;
+  line-height: 1.17;
+  height: 35.45px;
+}
+.search {
+  width: 240px;
+  height: 35px;
+  display: flex;
+  background: $background-color;
+  margin-left: 2.9rem;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 17px;
+  border-radius: 17px;
+  input {
+    line-height: 17px;
+    font-size: 0.8rem;
+    width: 90%;
+    height: 20px;
+    margin: 0;
+    border: none;
+    background: transparent;
+    text-rendering: none;
+    color: inherit;
+    &:focus {
+      border: none !important;
+      outline: transparent;
+    }
+  }
+  label {
+    @include aligning(center, row);
+    margin: 0;
+    padding: 0;
+  }
+}

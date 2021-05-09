@@ -1,0 +1,132 @@
+@mixin border($position) {
+  @if ($position== bottom) {
+    border-bottom: 1px solid $border-color;
+  } @else {
+    border-right: 1px solid $border-color;
+  }
+}
+.home {
+  width: 100%;
+}
+.home-content {
+  margin-top: 100px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .main-menu {
+    transition: all 0.5s ease-in-out;
+    font-size: 13px;
+    font-family: Nunito;
+    background-color: $secondry-background;
+    height: 86vh;
+    width: 120px;
+
+    @include border(rigth);
+    .menu-list {
+      width: 100%;
+      height: 100px;
+      color: $primary-text-color;
+      @include border(bottom);
+      padding: 5px;
+      margin: 0;
+      @include aligning(center, column);
+      &:hover {
+        text-decoration: none;
+        transition: all 0.6s ease-in-out;
+        span {
+          color: $primary-text-color !important;
+        }
+      }
+      span {
+        font-size: 25px;
+        color: $smarl-text-color;
+      }
+      p {
+        color: $primary-text-color !important;
+
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    &:hover {
+      transition: all 0.6s ease-in-out;
+    }
+  }
+  .sub-menu {
+    width: auto;
+    @include aligning(center, column);
+    padding: 20px;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+    height: 100%;
+    background-color: $secondry-background;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 0 3px 30px rgba(158, 158, 158, 0.322);
+  }
+}
+.hide {
+  transform: translateX(-150px);
+  display: none;
+}
+.show {
+  transform: translateX(0);
+}
+.hide-sub {
+  transform: translateX(-350px);
+  z-index: -1;
+  position: absolute;
+}
+.border {
+  border-radius: 0 20px 20px 0;
+  box-shadow: 0 3px 30px rgba(158, 158, 158, 0.322);
+}
+.show-sub {
+  position: absolute;
+  left: 0;
+}
+.both {
+  transform: none;
+}
+.none {
+  position: absolute;
+  transform: translateX(-350px);
+}
+.driver {
+  // background-color: aqua;
+  width: 100%;
+  z-index: 99999;
+  font-size: 15px;
+  @include aligning(center, column);
+  .c-profile {
+    text-align: center;
+    span {
+      font-size: 60px;
+      color: $smarl-text-color;
+    }
+    p {
+      padding: 0;
+      margin: 0;
+    }
+    .email {
+      font-size: 12px;
+    }
+  }
+  .d-infos {
+    padding: 10px;
+    p {
+      padding: 0;
+      margin: 7px;
+    }
+  }
+  .sub-buttons {
+    width: 100%;
+    padding: 10px;
+    @include aligning(center, row);
+    button {
+      font-size: 13px;
+      margin: 5px;
+    }
+  }
+}

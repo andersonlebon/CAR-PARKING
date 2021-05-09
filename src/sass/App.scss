@@ -1,0 +1,89 @@
+$background-color: #f8f8f8;
+$smarl-text-color: #8f8f8f;
+$primary-text-color: #3a3a3a;
+$strong-text-color: #212529;
+$secondry-background: #fff;
+$border-color: rgba(112, 112, 112, 0.192);
+$button-background: #48494b;
+@import "./logInform";
+@import "./navigationBar";
+@import "./menu";
+@import "./main-side";
+@import "./car";
+@import "./newCar";
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"),
+    url("./Nunito_Sans/NunitoSans-Regular.ttf") format("truetype");
+}
+html {
+  overflow: hidden;
+}
+body {
+  background-color: $background-color !important;
+  font-size: 16px;
+  font-family: Nunito;
+  color: $primary-text-color;
+}
+span:hover {
+  transition: all 0.2s ease-in-out;
+  color: $primary-text-color;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+input:focus {
+  border: none !important;
+  outline: transparent;
+}
+.scroll-bar {
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 7px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+  }
+  &:hover {
+    &::-webkit-scrollbar {
+      width: 7px;
+      background-color: rgba(201, 197, 197, 0.198);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #a8a8a896;
+      border-radius: 10px;
+    }
+  }
+}
+.paginate {
+  width: 100%;
+  cursor: pointer;
+  @include aligning(center, row);
+  .pagination {
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 50%;
+    margin: 0 5px;
+    @include aligning(center, column);
+    border: 1px solid $border-color;
+    color: $smarl-text-color;
+    background-color: transparent;
+    &:hover {
+      transition: all 0.6s ease;
+      color: $primary-text-color;
+      border: 1px solid $primary-text-color;
+      background-color: #eeeeee;
+      transform: scale(1.08);
+    }
+  }
+}
+.on-page {
+  color: $primary-text-color !important;
+  border: 1px solid #b4b3b3 !important;
+  background-color: $background-color !important;
+  box-shadow: 1px 1px 10px 2px rgba(177, 176, 176, 0.185);
+  transform: scale(1.2);
+}

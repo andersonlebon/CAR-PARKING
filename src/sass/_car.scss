@@ -1,0 +1,106 @@
+.car-Content {
+  margin: 10px;
+  @include aligning(center, column);
+  align-items: flex-start !important;
+  width: 250px;
+  height: 350px;
+  position: relative;
+  background-color: $secondry-background;
+  border-radius: 15px;
+  .car {
+    width: 100%;
+    height: 60%;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px 15px 0 0;
+      object-fit: cover;
+    }
+  }
+  .text-container {
+    height: 40%;
+    @include aligning(center, column);
+    align-items: flex-start !important;
+    padding: 0 25px;
+    width: 100%;
+    .all-container {
+      width: 75%;
+      // background-color: aquamarine;
+      @include aligning(flex-start, row);
+      position: relative;
+      input {
+        width: 0;
+        height: 0;
+      }
+      .cnt {
+        width: 20px;
+        height: 20px;
+        border: 1px solid rgba(68, 67, 67, 0.637);
+        border-radius: 5px;
+      }
+      .checkmark {
+        width: 7px;
+        height: 10px;
+        border: 1px solid rgb(10, 2, 2);
+        border-width: 0 3px 3px 0;
+        // -webkit-transform: rotate(45deg);
+        // -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        position: absolute;
+        top: 4px;
+        left: 6px;
+        display: none;
+      }
+      input:checked ~ .checkmark {
+        width: 7px;
+        z-index: 2;
+        height: 12px;
+        border: 1px solid rgb(245, 233, 233);
+        border-width: 0 3px 3px 0;
+        // -webkit-transform: rotate(45deg);
+        // -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        position: absolute;
+        display: block;
+        top: 3px;
+        left: 6px;
+      }
+      input:checked ~ .cnt {
+        background-color: $button-background;
+      }
+      span {
+        margin: 0 7px;
+        font-size: 13px;
+        color: $primary-text-color;
+      }
+    }
+  }
+}
+.time {
+  font-size: 13px;
+  color: $smarl-text-color;
+  margin-left: 40px;
+}
+.cars {
+  height: 60vh;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  display: grid;
+  padding: 20px 0;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  width: 100%;
+  // flex-wrap: wrap;
+}
+.status {
+  background-color: $button-background;
+  color: #fff;
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  left: -10px;
+  border-radius: 50px;
+  font-size: 13px;
+  width: 100px;
+}
