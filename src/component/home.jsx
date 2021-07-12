@@ -29,16 +29,16 @@ class Home extends Component {
   };
   handelSearch = () => {};
   async componentDidMount() {
-    try {
-      const promis = await axios.get(
-        "http://localhost:4000/car-parking.com/api/cars"
-      );
-      // this.setState({ garage });
+    // try {
+    //   const promis = await axios.get(
+    //     "http://localhost:4000/car-parking.com/api/cars"
+    //   );
+      this.setState({ garage: getCars() });
       console.log("hello can you see the message?");
-      console.log(promis);
-    } catch (ex) {
-      console.log("something fail");
-    }
+      // console.log(promis);
+    // } catch (ex) {
+    //   console.log("something fail");
+    // }
   }
   handleChangePage = (page) => {
     this.setState({ currentPage: page });
