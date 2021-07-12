@@ -7,6 +7,8 @@ import SubMenu from "./sub-menu";
 import { getCars } from "./fakeCarService";
 import NotFound from "./common/notFound";
 import WelcomePage from "./welcomePage";
+import axios from "axios";
+import { RiContactsBookLine } from "react-icons/ri";
 
 class Home extends Component {
   state = {
@@ -26,8 +28,17 @@ class Home extends Component {
     console.log(this.state.currentPage);
   };
   handelSearch = () => {};
-  componentDidMount() {
-    this.setState({ garage: getCars() });
+  async componentDidMount() {
+    try {
+      const promis = await axios.get(
+        "http://localhost:4000/car-parking.com/api/cars"
+      );
+      // this.setState({ garage });
+      console.log("hello can you see the message?");
+      console.log(promis);
+    } catch (ex) {
+      console.log("something fail");
+    }
   }
   handleChangePage = (page) => {
     this.setState({ currentPage: page });
@@ -53,7 +64,7 @@ class Home extends Component {
   render() {
     const { ShowMenu, onShowToMenu } = this.props;
     const { garage, allInput, currentPage, data, pageSize } = this.state;
-
+    console.log(this.state.garage);
     return (
       <div className="home">
         <div className="home-content">
