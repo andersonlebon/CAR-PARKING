@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/CAR-PARKING/static/css/main.8f497584.chunk.css",
+    "main.js": "/CAR-PARKING/static/js/main.19bb4082.chunk.js",
+    "main.js.map": "/CAR-PARKING/static/js/main.19bb4082.chunk.js.map",
+    "runtime-main.js": "/CAR-PARKING/static/js/runtime-main.1deeb599.js",
+    "runtime-main.js.map": "/CAR-PARKING/static/js/runtime-main.1deeb599.js.map",
+    "static/css/2.ef9168ec.chunk.css": "/CAR-PARKING/static/css/2.ef9168ec.chunk.css",
+    "static/js/2.23d5f9b1.chunk.js": "/CAR-PARKING/static/js/2.23d5f9b1.chunk.js",
+    "static/js/2.23d5f9b1.chunk.js.map": "/CAR-PARKING/static/js/2.23d5f9b1.chunk.js.map",
+    "static/js/3.3034b6bf.chunk.js": "/CAR-PARKING/static/js/3.3034b6bf.chunk.js",
+    "static/js/3.3034b6bf.chunk.js.map": "/CAR-PARKING/static/js/3.3034b6bf.chunk.js.map",
+    "index.html": "/CAR-PARKING/index.html",
+    "static/css/2.ef9168ec.chunk.css.map": "/CAR-PARKING/static/css/2.ef9168ec.chunk.css.map",
+    "static/css/main.8f497584.chunk.css.map": "/CAR-PARKING/static/css/main.8f497584.chunk.css.map",
+    "static/js/2.23d5f9b1.chunk.js.LICENSE.txt": "/CAR-PARKING/static/js/2.23d5f9b1.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/CAR-PARKING/static/media/NunitoSans-Regular.87d92665.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1deeb599.js",
+    "static/css/2.ef9168ec.chunk.css",
+    "static/js/2.23d5f9b1.chunk.js",
+    "static/css/main.8f497584.chunk.css",
+    "static/js/main.19bb4082.chunk.js"
+  ]
+}
