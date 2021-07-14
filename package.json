@@ -2,7 +2,7 @@
   "name": "vidly-app",
   "version": "0.1.0",
   "private": true,
-  "Homepage": "https://andersonlebon.github.io/CAR-PARKING/",
+  "homepage": "https://andersonlebon.github.io/CAR-PARKING/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
@@ -20,12 +20,12 @@
     "web-vitals": "^1.1.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
