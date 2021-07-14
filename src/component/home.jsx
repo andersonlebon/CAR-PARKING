@@ -6,7 +6,6 @@ import MainSide from "./mainSide";
 import SubMenu from "./sub-menu";
 import { getCars } from "./fakeCarService";
 import NotFound from "./common/notFound";
-import WelcomePage from "./welcomePage";
 import axios from "axios";
 import { RiContactsBookLine } from "react-icons/ri";
 
@@ -33,9 +32,9 @@ class Home extends Component {
     //   const promis = await axios.get(
     //     "http://localhost:4000/car-parking.com/api/cars"
     //   );
-      this.setState({ garage: getCars() });
-      console.log("hello can you see the message?");
-      // console.log(promis);
+    this.setState({ garage: getCars() });
+    console.log("hello can you see the message?");
+    // console.log(promis);
     // } catch (ex) {
     //   console.log("something fail");
     // }
@@ -89,11 +88,6 @@ class Home extends Component {
 
           <div className="side">
             <Switch>
-              <Route
-                path="/"
-                exact
-                render={(props) => <WelcomePage {...props} />}
-              />
               <Route
                 path="/home/:id"
                 exact

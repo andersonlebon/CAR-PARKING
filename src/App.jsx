@@ -6,6 +6,7 @@ import { Route, Switch } from "react-router-dom";
 
 import Navbar from "./component/navBar";
 import Home from "./component/home";
+import WelcomePage from "./component/welcomePage";
 
 class App extends Component {
   state = {
@@ -32,6 +33,11 @@ class App extends Component {
             render={(props) => (
               <Home ShowMenu={this.state.showMenu} {...props} />
             )}
+          />
+          <Route
+            path="/"
+            exact
+            render={(props) => <WelcomePage {...props} />}
           />
         </Switch>
       </div>
