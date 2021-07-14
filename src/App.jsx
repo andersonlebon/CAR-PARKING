@@ -27,11 +27,13 @@ class App extends Component {
             path="/"
             render={(props) => <Navbar onShowMenu={this.handleShowMenu} />}
           />
+          <Route
+            path="/"
+            render={(props) => (
+              <Home ShowMenu={this.state.showMenu} {...props} />
+            )}
+          />
         </Switch>
-        <Route
-          path="/"
-          render={(props) => <Home ShowMenu={this.state.showMenu} {...props} />}
-        />
       </div>
     );
   }
