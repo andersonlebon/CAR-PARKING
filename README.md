@@ -13,7 +13,7 @@ This project is build with:
 
 ## Live demo
 
-> see the live demo link [here](https://andersonlebon.github.io/)
+> see the live demo link [here](https://andersonlebon.github.io/CAR_PARKING)
 
 ## Getting Started
 
