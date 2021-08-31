@@ -22,24 +22,21 @@ class App extends Component {
   render() {
     return (
       <div>
+        {/* <WelcomePage /> */}
+        <Navbar onShowMenu={this.handleShowMenu} />
+        <Home ShowMenu={this.state.showMenu} />
+        {/* <Route path="/" render={(props) => <WelcomePage />} />
+        <Route
+          path="/home"
+          render={(props) => <Home ShowMenu={this.state.showMenu} {...props} />}
+        />
         <Switch>
           <Route path="/logIn" component={LogIn} />
           <Route
             path="/"
             render={(props) => <Navbar onShowMenu={this.handleShowMenu} />}
           />
-          <Route
-            path="/"
-            render={(props) => (
-              <Home ShowMenu={this.state.showMenu} {...props} />
-            )}
-          />
-          <Route
-            path="/"
-            exact
-            render={(props) => <WelcomePage {...props} />}
-          />
-        </Switch>
+        </Switch> */}
       </div>
     );
   }

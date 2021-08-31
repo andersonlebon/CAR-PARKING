@@ -58,7 +58,7 @@ class Home extends Component {
     let getSubMenu = this.state.getSubMenu;
     getSubMenu = true;
     this.setState({ getSubMenu });
-    this.props.history.push(`/home/${id}`);
+    // this.props.history.push(`/home/${id}`);
   };
   render() {
     const { ShowMenu, onShowToMenu } = this.props;
@@ -67,29 +67,11 @@ class Home extends Component {
     return (
       <div className="home">
         <div className="home-content">
-          <Route
-            path="/home/:id"
-            render={(props) => (
-              <MainMenu cars={garage} ShowMenu={ShowMenu} {...props} />
-            )}
-          />
-          <Route
-            path="/home/:id"
-            exact
-            render={(props) => (
-              <SubMenu
-                cars={garage}
-                ShowMenu={ShowMenu}
-                getSubMenu={this.state.getSubMenu}
-                {...props}
-              />
-            )}
-          />
-
+          <MainMenu cars={garage} ShowMenu={ShowMenu} />
           <div className="side">
             <Switch>
               <Route
-                path="/home/:id"
+                path="/"
                 exact
                 render={(props) => (
                   <MainSide
@@ -118,8 +100,6 @@ class Home extends Component {
                   />
                 )}
               />
-
-              <Redirect to="/notfound" component={NotFound} />
             </Switch>
           </div>
         </div>

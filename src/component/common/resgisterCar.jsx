@@ -131,7 +131,7 @@ class NewCar extends Component {
             <button className="btne">
               <RiArrowRightSLine />
             </button>
-            <Link to="/home/list" className="btne">
+            <Link to="/" className="btne">
               <RiArrowLeftSLine />
             </Link>
           </div>
