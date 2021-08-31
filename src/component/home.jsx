@@ -1,13 +1,9 @@
 import React, { Component } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import NewCar from "./common/resgisterCar";
 import MainMenu from "./mainMenu";
 import MainSide from "./mainSide";
-import SubMenu from "./sub-menu";
 import { getCars } from "./fakeCarService";
-import NotFound from "./common/notFound";
-import axios from "axios";
-import { RiContactsBookLine } from "react-icons/ri";
 
 class Home extends Component {
   state = {

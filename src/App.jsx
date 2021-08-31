@@ -1,12 +1,9 @@
-import LogIn from "./component/LogIn";
 import React, { Component } from "react";
 import "./sass/App.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { Route, Switch } from "react-router-dom";
 
 import Navbar from "./component/navBar";
 import Home from "./component/home";
-import WelcomePage from "./component/welcomePage";
 
 class App extends Component {
   state = {
