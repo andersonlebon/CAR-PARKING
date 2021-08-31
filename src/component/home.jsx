@@ -57,7 +57,7 @@ class Home extends Component {
     // this.props.history.push(`/home/${id}`);
   };
   render() {
-    const { ShowMenu, onShowToMenu } = this.props;
+    const { ShowMenu } = this.props;
     const { garage, allInput, currentPage, data, pageSize } = this.state;
     console.log(this.state.garage);
     return (
