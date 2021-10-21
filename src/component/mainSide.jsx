@@ -12,7 +12,7 @@ class MainSide extends Component {
   state = {
     changeClass: false,
     data: "",
-    sorted: { path: "driver", order: "asc" },
+    sorted: { path: "name", order: "asc" },
   };
   handelSort = (sort) => {
     let sorted = { ...this.state.sorted };
@@ -50,7 +50,6 @@ class MainSide extends Component {
   };
   handelModify = (id) => {
     this.props.history.push(`/home/registerNewcar/${id}`);
-    console.log("go");
   };
   render() {
     const {
@@ -64,7 +63,7 @@ class MainSide extends Component {
       data,
     } = this.props;
     const { sorted } = this.state;
-    const searchedCar = garage.filter((car) =>
+    const searchedCar =  garage.filter((car) =>
       car[sorted.path].toLowerCase().startsWith(data.toLowerCase())
     );
     const pageCount = Math.ceil(searchedCar.length / pageSize);
@@ -163,19 +162,19 @@ class MainSide extends Component {
                   <th scope="col">#</th>
                   <th
                     scope="col"
-                    onClick={() => this.handelChangeDrop("driver")}
+                    onClick={() => this.handelChangeDrop("name")}
                   >
                     Driver'Name
-                    {this.handelMakeSort("driver")}
+                    {this.handelMakeSort("name")}
                   </th>
-                  <th scope="col" onClick={() => this.handelChangeDrop("type")}>
-                    Car's Type {this.handelMakeSort("type")}
+                  <th scope="col" onClick={() => this.handelChangeDrop("carMark")}>
+                    Car's Type {this.handelMakeSort("carMark")}
                   </th>
                   <th
                     scope="col"
-                    onClick={() => this.handelChangeDrop("plaque")}
+                    onClick={() => this.handelChangeDrop("plateNumber")}
                   >
-                    Plaque {this.handelMakeSort("plaque")}
+                    Plaque {this.handelMakeSort("plateNumber")}
                   </th>
                   <th scope="col">Phone Number</th>
                   <th scope="col">Modify Data</th>

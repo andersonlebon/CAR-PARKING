@@ -6,15 +6,15 @@ class Car extends Component {
     const { carInfo: car, onModify, onShowToMenu, onDelete } = this.props;
     return (
       <tr>
-        <th>{car._id}</th>
-        <td onClick={() => onShowToMenu(car._id)}>
-          <Link className="nameLink" to={`/home/${car._id}`}>
-            {car.driver}
+        <th>{car.index}</th>
+        <td onClick={() => onShowToMenu(car.index)}>
+          <Link className="nameLink" to={`/home/${car.name}`}>
+            {car.name}
           </Link>
         </td>
-        <td onClick={() => onShowToMenu(car._id)}>{car.type}</td>
-        <td onClick={() => onShowToMenu(car._id)}>{car.plaque}</td>
-        <td onClick={() => onShowToMenu(car._id)}>{car.phoneNumber}</td>
+        <td onClick={() => onShowToMenu(car.index)}>{car.carMark}</td>
+        <td onClick={() => onShowToMenu(car.index)}>{car.plateNumber}</td>
+        <td onClick={() => onShowToMenu(car.index)}>{car.phoneNumber}</td>
 
         <td>
           <button

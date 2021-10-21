@@ -39,7 +39,7 @@ class Navbar extends Component {
             </span>
           </div>
           <div className="logged">
-            <span>Calen Anderson</span>
+            <span>Moise Rushanika</span>
             <div className="picture">
               <CgProfile />
             </div>
