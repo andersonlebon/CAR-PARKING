@@ -10,7 +10,6 @@ class SubMenu extends Component {
     const { ShowMenu, cars, getSubMenu } = this.props;
     const id = this.props.match.params.id;
     const car = cars.find((acar) => acar._id === parseInt(id)) || {};
-    // if(car== undefined) car={}
     return (
       <div
         className={

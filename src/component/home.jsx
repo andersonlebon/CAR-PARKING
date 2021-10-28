@@ -24,7 +24,6 @@ class Home extends Component {
 		currentPage = 1;
 		data = e.currentTarget.value;
 		this.setState({ data, currentPage });
-		console.log(this.state.currentPage);
 	};
 	async	componentDidMount() {
 		const {data} = await axios.get(' https://smart-parking-management.herokuapp.com/api/customers')
@@ -44,7 +43,6 @@ class Home extends Component {
 	};
 	handelDelete = async (_id) => {
 		const {data} = await axios.delete(` https://smart-parking-management.herokuapp.com/api/customer/${_id}`);
-		console.log(data);
 		const {data: cars } = await axios.get(' https://smart-parking-management.herokuapp.com/api/customers')
 		this.setState({ garage: cars });
 	};
@@ -82,7 +80,6 @@ class Home extends Component {
 
 						<div className="side">
 						<Switch>
-							{/* <Route path="/" exact component={Login} /> */}
 							<Route
 								path="/home"
 								exact

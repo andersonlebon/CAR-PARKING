@@ -4,7 +4,6 @@ import { FaRegUser, FaCar } from 'react-icons/fa';
 import { RiArrowRightSLine, RiArrowLeftSLine } from 'react-icons/ri';
 import { AiOutlineMail } from 'react-icons/ai';
 import { MdContactPhone } from 'react-icons/md';
-import {  getCars } from '../fakeCarService';
 import axios from 'axios';
 
 class NewCar extends Component {
@@ -16,6 +15,7 @@ class NewCar extends Component {
 			plateNumber: '',
 			phoneNumber: '',
 		},
+		post:{},
 		errorMessage: '',
 	};
 	async	componentDidMount() {
@@ -44,15 +44,15 @@ class NewCar extends Component {
 					' https://smart-parking-management.herokuapp.com/api/customer',
 					this.state.allInput
 				);
-				console.log(post);
+				this.setState({post})
 				this.props.history.push(`/home`)
 		} else {
-			console.log(id);
 			const { data: post } = await axios.put(
 				` https://smart-parking-management.herokuapp.com/api/customer/${id}`,
 				this.state.allInput
 				);
-			console.log(post);
+			this.setState({post})
+
 			this.props.history.push('/home')
 		}
 

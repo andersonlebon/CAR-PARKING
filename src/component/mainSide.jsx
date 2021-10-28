@@ -32,7 +32,6 @@ class MainSide extends Component {
         sorted.order = "asc";
       }
       this.setState({ sorted });
-      // console.log(this.state.sorted.order);
     } else return null;
   };
 
@@ -66,7 +65,6 @@ class MainSide extends Component {
       car[sorted.path].toLowerCase().startsWith(data.toLowerCase())
     );
     const pageCount = Math.ceil(searchedCar.length / pageSize);
-    // if (pageCount === 1) return null;
     const pages = _.range(1, pageCount + 1);
     const sortedCars = _.orderBy(searchedCar, [sorted.path], [sorted.order]);
     const cars = paginater(sortedCars, currentPage, pageSize);
@@ -76,7 +74,7 @@ class MainSide extends Component {
           <h1>CARS REGISTRED</h1>
           <div className="buttons">
             <Link to="/home/registerNewCar/new" className="add">
-              ADD NEW
+              ADD NEW CAR
             </Link>
           </div>
           <div className="buttons">
