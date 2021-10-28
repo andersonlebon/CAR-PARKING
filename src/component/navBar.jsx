@@ -29,7 +29,7 @@ class Navbar extends Component {
           </div>
         </div>
         <div className="log">
-          <h1>PARKING</h1>
+          <h1 style= {{fontStyle:"italic", marginLeft: "120px"}}>SMART PARKING</h1>
         </div>
         <div className="sideTwo">
           <div className="darkMode">
@@ -42,7 +42,7 @@ class Navbar extends Component {
             <div className="picture">
               <CgProfile />
             </div>
-            <span onClick={this.handleLogout}><Link to='/'>Log out</Link> </span>
+            <span onClick={this.handleLogout}><Link style={{ textDecoration: "none"}} to='/'>Log out</Link> </span>
           </div>
         </div>
       </header>

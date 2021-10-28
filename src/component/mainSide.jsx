@@ -79,6 +79,11 @@ class MainSide extends Component {
               ADD NEW
             </Link>
           </div>
+          <div className="buttons">
+            <Link to="/home/admin/new" className="add">
+              ADD NEW ADMIN
+            </Link>
+          </div>
         </div>
         <nav className="navLink">
           <ul>

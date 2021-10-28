@@ -6,6 +6,7 @@ import MainSide from "./mainSide";
 import SubMenu from "./sub-menu";
 import NotFound from "./common/notFound";
 import axios from 'axios';
+import NewAdmin from "./registerAdmin";
 
 
 class Home extends Component {
@@ -105,6 +106,17 @@ class Home extends Component {
 								path="/home/registerNewCar/:id"
 								render={(props) => (
 									<NewCar
+										onChange={this.handelChange}
+										inputs={allInput}
+										onSubmit={this.handelSubmit}
+										{...props}
+									/>
+								)}
+							/>
+							<Route
+								path="/home/admin/new"
+								render={(props) => (
+									<NewAdmin
 										onChange={this.handelChange}
 										inputs={allInput}
 										onSubmit={this.handelSubmit}
