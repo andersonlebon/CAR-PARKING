@@ -30,6 +30,7 @@ class NewCar extends Component {
 			this.setState({ allInput });
 		}
 	}
+
 	handelChange = ({ currentTarget: input }) => {
 		const allInput = { ...this.state.allInput };
 		allInput[input.name] = input.value;
@@ -39,21 +40,12 @@ class NewCar extends Component {
 		e.preventDefault();
 		const id = this.props.match.params.id;
 		if (id === 'new') {
-			try {
 				const { data: post } = await axios.post(
 					' https://smart-parking-management.herokuapp.com/api/customer',
 					this.state.allInput
 				);
 				console.log(post);
-				const user = JSON.parse(localStorage.get('currentUser'))
-				this.props.history.push(`/home/${user._id}`)
-			}
-			catch(ex) {
-				if(ex.response && ex.response.status === 400) {
-					let errorMessage = ex.response.data;
-					this.setState({ errorMessage })
-				}
-			}
+				this.props.history.push(`/home`)
 		} else {
 			console.log(id);
 			const { data: post } = await axios.put(

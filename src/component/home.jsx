@@ -6,7 +6,6 @@ import MainSide from "./mainSide";
 import SubMenu from "./sub-menu";
 import NotFound from "./common/notFound";
 import axios from 'axios';
-import Login from "./LogIn";
 
 
 class Home extends Component {
@@ -26,8 +25,14 @@ class Home extends Component {
 		this.setState({ data, currentPage });
 		console.log(this.state.currentPage);
 	};
-	handelSearch = () => {};
 	async	componentDidMount() {
+		const {data} = await axios.get(' https://smart-parking-management.herokuapp.com/api/customers')
+		console.log(data)
+		this.setState({ garage: data });
+		console.log('cars list c');
+
+	}
+	async componentDidUpdate() {
 		const {data} = await axios.get(' https://smart-parking-management.herokuapp.com/api/customers')
 		console.log(data)
 		this.setState({ garage: data });
@@ -56,6 +61,7 @@ class Home extends Component {
 	render() {
 		const { ShowMenu } = this.props;
 		const { garage, allInput, currentPage, data, pageSize } = this.state;
+		console.log('cars list');
 
 		return (
 			<div className="home">
