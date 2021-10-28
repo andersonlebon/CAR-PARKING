@@ -12,7 +12,6 @@ class Navbar extends Component {
   }
   componentDidMount() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    console.log(currentUser);
     this.setState({currentUser});
   }
   
