@@ -16,6 +16,7 @@ class NewCar extends Component {
 			plateNumber: '',
 			phoneNumber: '',
 		},
+		errorMessage: '',
 	};
 	async	componentDidMount() {
 		const id = this.props.match.params.id;
@@ -39,12 +40,20 @@ class NewCar extends Component {
 		e.preventDefault();
 		const id = this.props.match.params.id;
 		if (id === 'new') {
-		const { data: post } = await axios.post(
-			' https://smart-parking-management.herokuapp.com/api/customer',
-			this.state.allInput
-		);
-		console.log(post);
-		this.props.history.push('/')
+			try {
+				const { data: post } = await axios.post(
+					' https://smart-parking-management.herokuapp.com/api/customer',
+					this.state.allInput
+				);
+				console.log(post);
+				this.props.history.push('/')
+			}
+			catch(ex) {
+				if(ex.response && ex.response.status === 400) {
+					let errorMessage = ex.response.data;
+					this.setState({ errorMessage })
+				}
+			}
 		} else {
 			console.log(id);
 			const { data: post } = await axios.put(
@@ -52,14 +61,18 @@ class NewCar extends Component {
 				this.state.allInput
 				);
 			console.log(post);
+			this.props.history.push('/')
+
 		}
 
 	};
 	render() {
 		const { handelChange, handelSubmit } = this;
 		const { name, cardId, carMark, plateNumber, phoneNumber } = this.state.allInput;
+		const {errorMessage} = this.state;
 		return (
 			<div className='register'>
+				{errorMessage && <h1>{errorMessage}</h1>}
 				<h1>REGISTER A CAR</h1>
 				<form onSubmit={handelSubmit}>
 					<label htmlFor='driver'>

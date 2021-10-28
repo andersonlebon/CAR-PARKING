@@ -7,6 +7,7 @@ import SubMenu from "./sub-menu";
 import { getCars } from "./fakeCarService";
 import NotFound from "./common/notFound";
 import axios from 'axios';
+import Login from "./LogIn";
 
 
 class Home extends Component {
@@ -81,13 +82,9 @@ class Home extends Component {
 
 						<div className="side">
 						<Switch>
-							{/* <Route
-                path="/"
-                exact
-                render={(props) => <WelcomePage {...props} />}
-              /> */}
+							<Route path="/" exact component={Login} />
 							<Route
-								path="/"
+								path="/home/:id"
 								exact
 								render={(props) => (
 									<MainSide

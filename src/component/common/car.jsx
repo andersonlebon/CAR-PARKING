@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 
 class Car extends Component {
   render() {
-    const { carInfo: car, onModify, onShowToMenu, onDelete } = this.props;
+    const { carInfo: car, onModify, onDelete } = this.props;
     return (
       <tr>
         <th>{car.index}</th>
-        <td onClick={() => onShowToMenu(car.index)}>
-          <Link className="nameLink" to={`/home/${car.name}`}>
+        <td >
+          <Link className="nameLink">
             {car.name}
           </Link>
         </td>
-        <td onClick={() => onShowToMenu(car.index)}>{car.carMark}</td>
-        <td onClick={() => onShowToMenu(car.index)}>{car.plateNumber}</td>
-        <td onClick={() => onShowToMenu(car.index)}>{car.phoneNumber}</td>
+        <td>{car.carMark}</td>
+        <td >{car.plateNumber}</td>
+        <td >{car.phoneNumber}</td>
 
         <td>
           <button
@@ -35,3 +35,4 @@ class Car extends Component {
   }
 }
 export default Car;
+
