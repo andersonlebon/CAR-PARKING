@@ -6,6 +6,7 @@ import { Route, Switch } from "react-router-dom";
 
 import Navbar from "./component/navBar";
 import Home from "./component/home";
+import Login from "./component/LogIn";
 
 class App extends Component {
   state = {
@@ -22,14 +23,14 @@ class App extends Component {
     return (
       <div>
         <Switch>
-          <Route path="/logIn" component={LogIn} />
+          <Route path="/" exact component={Login} />
           <Route
             path="/"
             render={(props) => <Navbar onShowMenu={this.handleShowMenu} />}
           />
         </Switch>
         <Route
-          path="/"
+          path="/home"
           render={(props) => <Home ShowMenu={this.state.showMenu} {...props} />}
         />
       </div>

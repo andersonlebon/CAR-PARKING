@@ -22,7 +22,6 @@ class NewCar extends Component {
 		const id = this.props.match.params.id;
 		const allInput = { ...this.state.allInput };
 		const{data: cars }= await axios.get('https://smart-parking-management.herokuapp.com/api/customers');
-		console.log(cars)
 		if (id !== 'new') {
 			const car = cars.filter((car) => car._id === id);
 			allInput._id = null;
@@ -46,7 +45,7 @@ class NewCar extends Component {
 					this.state.allInput
 				);
 				console.log(post);
-				this.props.history.push('/')
+				this.props.history.push('/home')
 			}
 			catch(ex) {
 				if(ex.response && ex.response.status === 400) {

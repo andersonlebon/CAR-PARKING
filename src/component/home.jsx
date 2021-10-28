@@ -4,7 +4,6 @@ import NewCar from "./common/resgisterCar";
 import MainMenu from "./mainMenu";
 import MainSide from "./mainSide";
 import SubMenu from "./sub-menu";
-import { getCars } from "./fakeCarService";
 import NotFound from "./common/notFound";
 import axios from 'axios';
 import Login from "./LogIn";
@@ -82,7 +81,7 @@ class Home extends Component {
 
 						<div className="side">
 						<Switch>
-							<Route path="/" exact component={Login} />
+							{/* <Route path="/" exact component={Login} /> */}
 							<Route
 								path="/home/:id"
 								exact

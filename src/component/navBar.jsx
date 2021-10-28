@@ -1,13 +1,21 @@
 import React, { Component } from "react";
-import { BsGrid } from "react-icons/bs";
-import { IoIosList, IoIosNotificationsOutline } from "react-icons/io";
+import { IoIosList} from "react-icons/io";
 import { CgDarkMode, CgProfile } from "react-icons/cg";
 import Search from "./common/search";
 
 class Navbar extends Component {
-  state = {};
+  state = {
+    currentUser:{}
+  };
+  componentDidMount() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log(currentUser);
+    this.setState({currentUser});
+  }
+  
   render() {
     const { onShowMenu } = this.props;
+    const { currentUser } = this.state;
     return (
       <header className="header">
         <div className="sideOne">
@@ -17,10 +25,9 @@ class Navbar extends Component {
             </span>
           </div>
           <Search added="search" />
-          <div className="language">EN</div>
         </div>
         <div className="log">
-          <h1>GOGO</h1>
+          <h1>PARKING</h1>
         </div>
         <div className="sideTwo">
           <div className="darkMode">
@@ -28,18 +35,8 @@ class Navbar extends Component {
               <CgDarkMode />
             </span>
           </div>
-          <div className="grid">
-            <span>
-              <BsGrid />
-            </span>
-          </div>
-          <div className="notification">
-            <span>
-              <IoIosNotificationsOutline />
-            </span>
-          </div>
           <div className="logged">
-            <span>Moise Rushanika</span>
+            <span>{currentUser.name}</span>
             <div className="picture">
               <CgProfile />
             </div>
