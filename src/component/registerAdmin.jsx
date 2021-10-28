@@ -31,16 +31,14 @@ class NewAdmin extends Component {
     this.setState({post})
     setTimeout(() => {
       this.props.history.push(`/home`);
-    },1000)
+    },500)
 	};
 	render() {
 		const { handelChange, handelSubmit } = this;
 		const { name, lastName, email, password, phoneNumber } =
 			this.state.allInput;
-		const { errorMessage } = this.state;
 		return (
 			<div className='register'>
-				{errorMessage && <h1>{errorMessage}</h1>}
 				<h1 style={{ fontSize: '24px' }}>REGISTER AN ADMIN</h1>
 				<form onSubmit={handelSubmit}>
 					<label htmlFor='driver'>
