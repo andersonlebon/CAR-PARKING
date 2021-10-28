@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { IoIosList} from "react-icons/io";
 import { CgDarkMode, CgProfile } from "react-icons/cg";
-import Search from "./common/search";
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
   state = {
     currentUser:{}
   };
+  handleLogout = () => {
+    localStorage.clear();
+  }
   componentDidMount() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     console.log(currentUser);
@@ -39,6 +42,7 @@ class Navbar extends Component {
             <div className="picture">
               <CgProfile />
             </div>
+            <span onClick={this.handleLogout}><Link to='/'>Log out</Link> </span>
           </div>
         </div>
       </header>

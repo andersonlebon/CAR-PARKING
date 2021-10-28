@@ -27,26 +27,21 @@ class Home extends Component {
 	};
 	async	componentDidMount() {
 		const {data} = await axios.get(' https://smart-parking-management.herokuapp.com/api/customers')
-		console.log(data)
 		this.setState({ garage: data });
-		console.log('cars list c');
 
 	}
 	async componentDidUpdate() {
 		const {data} = await axios.get(' https://smart-parking-management.herokuapp.com/api/customers')
-		console.log(data)
 		this.setState({ garage: data });
 	}
 	handleChangePage = (page) => {
 		this.setState({ currentPage: page });
-		console.log(this.state.currentPage);
 	};
 
 	handelReg = () => {
 		this.props.history.push("/registerNewCar");
 	};
 	handelDelete = async (_id) => {
-		console.log(_id);
 		const {data} = await axios.delete(` https://smart-parking-management.herokuapp.com/api/customer/${_id}`);
 		console.log(data);
 		const {data: cars } = await axios.get(' https://smart-parking-management.herokuapp.com/api/customers')
@@ -61,7 +56,6 @@ class Home extends Component {
 	render() {
 		const { ShowMenu } = this.props;
 		const { garage, allInput, currentPage, data, pageSize } = this.state;
-		console.log('cars list');
 
 		return (
 			<div className="home">
