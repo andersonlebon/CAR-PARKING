@@ -6,7 +6,7 @@ class Car extends Component {
     const { carInfo: car, onModify, onDelete } = this.props;
     return (
       <tr>
-        <th>{car.index}</th>
+        <th></th>
         <td >
           <Link className="nameLink">
             {car.name}

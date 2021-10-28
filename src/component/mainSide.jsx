@@ -83,44 +83,15 @@ class MainSide extends Component {
         <nav className="navLink">
           <ul>
             <li>
-              <div
-                onClick={() => this.handelChangeClass()}
-                className="search bg div"
-              >
-                <p>
-                  Oder by: {this.state.sorted.path}{" "}
-                  {
-                    <i>
-                      {this.state.sorted.order === "asc" ? (
-                        <IoMdArrowDropdown />
-                      ) : (
-                        <IoMdArrowDropup />
-                      )}
-                    </i>
-                  }
-                </p>
-                <div className={this.state.changeClass ? "drop" : "not-drop"}>
-                  <ul>
-                    <li onClick={() => this.handelSort("driver")}>
-                      <Link to="#">Name </Link>
-                    </li>
-                    <li onClick={() => this.handelSort("type")}>
-                      <Link to="#">Type of cars</Link>
-                    </li>
-                    <li onClick={() => this.handelSort("plaque")}>
-                      <Link to="#">Plaque</Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-            <li>
               <Search
                 added="search bg"
                 id="seach2"
                 onChange={onChange}
                 data={data}
               />
+            </li>
+            <li>
+                Number of Cars: {garage.length}
             </li>
           </ul>
         </nav>
