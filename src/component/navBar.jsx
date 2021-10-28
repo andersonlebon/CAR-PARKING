@@ -24,7 +24,6 @@ class Navbar extends Component {
               <IoIosList />
             </span>
           </div>
-          <Search added="search" />
         </div>
         <div className="log">
           <h1>PARKING</h1>

@@ -83,7 +83,7 @@ class Home extends Component {
 						<Switch>
 							{/* <Route path="/" exact component={Login} /> */}
 							<Route
-								path="/home/:id"
+								path="/home"
 								exact
 								render={(props) => (
 									<MainSide

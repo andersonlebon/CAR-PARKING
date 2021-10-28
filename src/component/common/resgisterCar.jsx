@@ -45,7 +45,8 @@ class NewCar extends Component {
 					this.state.allInput
 				);
 				console.log(post);
-				this.props.history.push('/home')
+				const user = JSON.parse(localStorage.get('currentUser'))
+				this.props.history.push(`/home/${user._id}`)
 			}
 			catch(ex) {
 				if(ex.response && ex.response.status === 400) {
@@ -60,8 +61,7 @@ class NewCar extends Component {
 				this.state.allInput
 				);
 			console.log(post);
-			this.props.history.push('/')
-
+			this.props.history.push('/home')
 		}
 
 	};
@@ -159,7 +159,7 @@ class NewCar extends Component {
 						<button className='btne'>
 							<RiArrowRightSLine />
 						</button>
-						<Link to='/' className='btne'>
+						<Link to='/home' className='btne'>
 							<RiArrowLeftSLine />
 						</Link>
 					</div>

@@ -5,7 +5,6 @@ import Pagination from "./common/pagination";
 import paginater from "./common/paginate";
 import Search from "./common/search";
 import Car from "./common/car";
-import { BsGrid, BsList, BsListTask } from "react-icons/bs";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 
 class MainSide extends Component {
@@ -79,39 +78,10 @@ class MainSide extends Component {
             <Link to="/home/registerNewCar/new" className="add">
               ADD NEW
             </Link>
-            {/* <div className="select">
-              <div className="selected">
-                <input type="checkbox" className="selected" id="check" />
-              </div>
-              <button onClick={() => ongetAcar()} className="do">
-                t
-              </button>
-            </div> */}
           </div>
         </div>
         <nav className="navLink">
           <ul>
-            <li>
-              <Link className="bigIcon" to="#">
-                <span>
-                  <BsList />
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link className="bigIcon" to="#">
-                <span>
-                  <BsListTask />
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link to="#">
-                <span>
-                  <BsGrid />
-                </span>
-              </Link>
-            </li>
             <li>
               <div
                 onClick={() => this.handelChangeClass()}
