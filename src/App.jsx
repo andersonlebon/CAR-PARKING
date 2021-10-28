@@ -1,4 +1,3 @@
-import LogIn from "./component/LogIn";
 import React, { Component } from "react";
 import "./sass/App.css";
 import "bootstrap/dist/css/bootstrap.css";

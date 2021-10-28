@@ -17,6 +17,7 @@ class Home extends Component {
 		pageSize: 5,
 		getSubMenu: false,
 		data: "",
+		carInfo:{}
 	};
 	handelChange = (e) => {
 		let data = this.state.data;
@@ -45,6 +46,8 @@ class Home extends Component {
 		const {data} = await axios.delete(` https://smart-parking-management.herokuapp.com/api/customer/${_id}`);
 		const {data: cars } = await axios.get(' https://smart-parking-management.herokuapp.com/api/customers')
 		this.setState({ garage: cars });
+		this.setState({carInfo: data});
+
 	};
 	handelShowToMenu = (id) => {
 		let getSubMenu = this.state.getSubMenu;
