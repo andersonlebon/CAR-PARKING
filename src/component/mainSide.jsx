@@ -5,14 +5,13 @@ import Pagination from "./common/pagination";
 import paginater from "./common/paginate";
 import Search from "./common/search";
 import Car from "./common/car";
-import { BsGrid, BsList, BsListTask } from "react-icons/bs";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 
 class MainSide extends Component {
   state = {
     changeClass: false,
     data: "",
-    sorted: { path: "driver", order: "asc" },
+    sorted: { path: "name", order: "asc" },
   };
   handelSort = (sort) => {
     let sorted = { ...this.state.sorted };
@@ -33,7 +32,6 @@ class MainSide extends Component {
         sorted.order = "asc";
       }
       this.setState({ sorted });
-      // console.log(this.state.sorted.order);
     } else return null;
   };
 
@@ -50,7 +48,6 @@ class MainSide extends Component {
   };
   handelModify = (id) => {
     this.props.history.push(`/home/registerNewcar/${id}`);
-    console.log("go");
   };
   render() {
     const {
@@ -64,11 +61,10 @@ class MainSide extends Component {
       data,
     } = this.props;
     const { sorted } = this.state;
-    const searchedCar = garage.filter((car) =>
+    const searchedCar =  garage.filter((car) =>
       car[sorted.path].toLowerCase().startsWith(data.toLowerCase())
     );
     const pageCount = Math.ceil(searchedCar.length / pageSize);
-    // if (pageCount === 1) return null;
     const pages = _.range(1, pageCount + 1);
     const sortedCars = _.orderBy(searchedCar, [sorted.path], [sorted.order]);
     const cars = paginater(sortedCars, currentPage, pageSize);
@@ -78,73 +74,17 @@ class MainSide extends Component {
           <h1>CARS REGISTRED</h1>
           <div className="buttons">
             <Link to="/home/registerNewCar/new" className="add">
-              ADD NEW
+              ADD NEW CAR
             </Link>
-            {/* <div className="select">
-              <div className="selected">
-                <input type="checkbox" className="selected" id="check" />
-              </div>
-              <button onClick={() => ongetAcar()} className="do">
-                t
-              </button>
-            </div> */}
+          </div>
+          <div className="buttons">
+            <Link to="/home/admin/new" className="add">
+              ADD NEW ADMIN
+            </Link>
           </div>
         </div>
         <nav className="navLink">
           <ul>
-            <li>
-              <Link className="bigIcon" to="#">
-                <span>
-                  <BsList />
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link className="bigIcon" to="#">
-                <span>
-                  <BsListTask />
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link to="#">
-                <span>
-                  <BsGrid />
-                </span>
-              </Link>
-            </li>
-            <li>
-              <div
-                onClick={() => this.handelChangeClass()}
-                className="search bg div"
-              >
-                <p>
-                  Oder by: {this.state.sorted.path}{" "}
-                  {
-                    <i>
-                      {this.state.sorted.order === "asc" ? (
-                        <IoMdArrowDropdown />
-                      ) : (
-                        <IoMdArrowDropup />
-                      )}
-                    </i>
-                  }
-                </p>
-                <div className={this.state.changeClass ? "drop" : "not-drop"}>
-                  <ul>
-                    <li onClick={() => this.handelSort("driver")}>
-                      <Link to="#">Name </Link>
-                    </li>
-                    <li onClick={() => this.handelSort("type")}>
-                      <Link to="#">Type of cars</Link>
-                    </li>
-                    <li onClick={() => this.handelSort("plaque")}>
-                      <Link to="#">Plaque</Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </li>
             <li>
               <Search
                 added="search bg"
@@ -152,6 +92,9 @@ class MainSide extends Component {
                 onChange={onChange}
                 data={data}
               />
+            </li>
+            <li>
+                Number of Cars: {garage.length}
             </li>
           </ul>
         </nav>
@@ -163,19 +106,19 @@ class MainSide extends Component {
                   <th scope="col">#</th>
                   <th
                     scope="col"
-                    onClick={() => this.handelChangeDrop("driver")}
+                    onClick={() => this.handelChangeDrop("name")}
                   >
                     Driver'Name
-                    {this.handelMakeSort("driver")}
+                    {this.handelMakeSort("name")}
                   </th>
-                  <th scope="col" onClick={() => this.handelChangeDrop("type")}>
-                    Car's Type {this.handelMakeSort("type")}
+                  <th scope="col" onClick={() => this.handelChangeDrop("carMark")}>
+                    Car's Type {this.handelMakeSort("carMark")}
                   </th>
                   <th
                     scope="col"
-                    onClick={() => this.handelChangeDrop("plaque")}
+                    onClick={() => this.handelChangeDrop("plateNumber")}
                   >
-                    Plaque {this.handelMakeSort("plaque")}
+                    Plaque {this.handelMakeSort("plateNumber")}
                   </th>
                   <th scope="col">Phone Number</th>
                   <th scope="col">Modify Data</th>

@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import Navbar from "./component/navBar";
 import Home from "./component/home";
+import Login from "./component/LogIn";
 
 class App extends Component {
   state = {
@@ -28,7 +29,7 @@ class App extends Component {
           render={(props) => <Home ShowMenu={this.state.showMenu} {...props} />}
         />
         <Switch>
-          <Route path="/logIn" component={LogIn} />
+          <Route path="/" exact component={Login} />
           <Route
             path="/"
             render={(props) => <Navbar onShowMenu={this.handleShowMenu} />}

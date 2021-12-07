@@ -1,7 +1,6 @@
 import React from "react";
 import MenuList from "./common/menu-list";
 import { GiShop } from "react-icons/gi";
-import { MdUsb } from "react-icons/md";
 
 const MainMenu = (props) => {
   const { ShowMenu } = props;

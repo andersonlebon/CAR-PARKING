@@ -1,13 +1,23 @@
 import React, { Component } from "react";
-import { BsGrid } from "react-icons/bs";
-import { IoIosList, IoIosNotificationsOutline } from "react-icons/io";
+import { IoIosList} from "react-icons/io";
 import { CgDarkMode, CgProfile } from "react-icons/cg";
-import Search from "./common/search";
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
-  state = {};
+  state = {
+    currentUser:{}
+  };
+  handleLogout = () => {
+    localStorage.clear();
+  }
+  componentDidMount() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.setState({currentUser});
+  }
+  
   render() {
     const { onShowMenu } = this.props;
+    const { currentUser } = this.state;
     return (
       <header className="header">
         <div className="sideOne">
@@ -16,11 +26,9 @@ class Navbar extends Component {
               <IoIosList />
             </span>
           </div>
-          <Search added="search" />
-          <div className="language">EN</div>
         </div>
         <div className="log">
-          <h1>GOGO</h1>
+          <h1 style= {{fontStyle:"italic", marginLeft: "120px"}}>SMART PARKING</h1>
         </div>
         <div className="sideTwo">
           <div className="darkMode">
@@ -28,21 +36,12 @@ class Navbar extends Component {
               <CgDarkMode />
             </span>
           </div>
-          <div className="grid">
-            <span>
-              <BsGrid />
-            </span>
-          </div>
-          <div className="notification">
-            <span>
-              <IoIosNotificationsOutline />
-            </span>
-          </div>
           <div className="logged">
-            <span>Calen Anderson</span>
+            <span>{currentUser.name}</span>
             <div className="picture">
               <CgProfile />
             </div>
+            <span onClick={this.handleLogout}><Link style={{ textDecoration: "none"}} to='/'>Log out</Link> </span>
           </div>
         </div>
       </header>

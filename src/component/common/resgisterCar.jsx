@@ -4,7 +4,7 @@ import { FaRegUser, FaCar } from "react-icons/fa";
 import { RiArrowRightSLine, RiArrowLeftSLine } from "react-icons/ri";
 import { AiOutlineMail } from "react-icons/ai";
 import { MdContactPhone } from "react-icons/md";
-import { addCar, getCars } from "../fakeCarService";
+import axios from "axios";
 
 class NewCar extends Component {
   state = {
