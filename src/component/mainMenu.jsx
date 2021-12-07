@@ -18,6 +18,10 @@ const MainMenu = (props) => {
       }
     >
       <MenuList icon={<GiShop />} content="Dashboards" />
+      <MenuList icon={<GiShop />} content="Dashboards" />
+      <MenuList icon={<MdUsb />} content="Menu" />
+      <MenuList icon={<GiShop />} content="Dashboards" />
+      <MenuList icon={<MdUsb />} content="Menu" />
     </div>
   );
 };
