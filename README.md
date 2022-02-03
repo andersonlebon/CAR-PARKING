@@ -11,6 +11,7 @@ This project is build with:
 - HTML;
 - SASS;
 - ReactJs;
+- NodeJs(API);
 - Bootstrap
 
 ## Live demo
